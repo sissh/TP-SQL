@@ -1,0 +1,13 @@
+CREATE DATABASE 'HN Formation';
+
+CREATE TABLE 'Student' 
+	('numstud' INT(8) AUTO_INCREMENT , 'name' VARCHAR(256) , 'firstname' VARCHAR(256) , 'dateofbirth' DATE(256) , 'street' VARCHAR(256) , 'postalcod' VARCHAR(256) , 'city' VARCHAR(256) , PRIMARY KEY ('numstud'));
+	
+CREATE TABLE 'Matter' 
+	('codemat' VARCHAR(256) , 'wording' VARCHAR(256), 'coef' FLOAT(8), PRIMARY KEY ('codemat'));
+	
+CREATE TABLE 'Test' 
+	('numtest' INT(8) AUTO_INCREMENT , 'testdate' DATE(256) , 'place' VARCHAR(256), PRIMARY KEY ('numtest') , 'codemat' VARCHAR(256) REFERENCES Matter(codemat));
+
+CREATE TABLE 'Notation' ('score' FLOAT(20) , 'numstud' INT(8) REFERENCES Student(numstud) , 'numtest' INT(8) REFERENCES Test(numtest)');
+

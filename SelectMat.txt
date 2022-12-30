@@ -1,0 +1,3 @@
+SELECT wording, CONCAT(coef*100, '%') FROM Matter;
+
+SELECT SUM(coef) FROM Matter;

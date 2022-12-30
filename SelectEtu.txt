@@ -1,0 +1,9 @@
+SELECT * FROM Student;
+
+SELECT * FROM Student ORDER BY name DESC;
+
+SELECT name, firstname FROM Student WHERE city = 'Lyon';
+
+SELECT name, firstname, city FROM where city LIKE '%ll%';
+
+SELECT name, firstname FROM Student WHERE name='Dupont' OR name='Durand' OR name='Martin';

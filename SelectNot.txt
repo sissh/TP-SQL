@@ -1,0 +1,21 @@
+SELECT COUNT(*) FROM Test;
+
+SELECT score, name, firstname FROM Notation, Student WHERE Student.numstud = Notation.numstud;
+
+SELECT score, name, firstname, wording FROM Notation, Student, Matter WHERE Student.numstud = Notation.numstud AND Matter.codemat = Notation.codemat;
+
+SELECT score, name FROM Notation, Student WHERE Notation.numstud = Student.numstud AND score >= 10;
+
+SELECT name, firstname FROM Notation, Student WHERE Notation.numstud = Student.numstud AND score == 20;
+
+SELECT AVG(score), name, firstname FROM Notation, Student WHERE Notation.numstud = Student.numstud GROUP BY numstud;
+
+SELECT numtest, date, codemat FROM Test WHERE date >= '01/01/2014' AND date <= '30/06/2022';
+
+SELECT numtest, date, place, wording FROM Test, Matter WHERE Test.codemat = Matter.codemat;
+
+SELECT AVG(score), name, firstname, FROM Notation, Student WHERE Notation.numstud = Student.numstud GROUP BY numstud ORDER BY score DESC;
+
+SELECT AVG(score), wording FROM Notation, Matter, Test WHERE Notation.numtest = Test.numtest AND Test.codemat = Matter.codemat GROUP BY codemat HAVING COUNT(codemat) > 1;
+
+SELECT AVG(score), numtest FROM Notation, Test WHERE Notation.numtest = Test.numtest GROUP BY numstud HAVING COUNT(numstud) < 6;
